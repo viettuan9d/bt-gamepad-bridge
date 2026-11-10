@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0A0E"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!-- Header bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎮 XBOX 360 &amp; MULTI-TOUCH BRIDGE"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đang tự động dò tìm thiết bị Bluetooth / Wi-Fi..."
+                android:textColor="#FFAA00"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnTogglePadView"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#7B1FA2"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="🎮 Tay cầm"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnConnectHost"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#1E88E5"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="🔵 Kết nối"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnRotate"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="#37474F"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="🔄"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnExitApp"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:backgroundTint="#C62828"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="🛑 Tắt"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Thanh hiển thị tên tay cầm cắm vào & thông số nút bấm theo thời gian thực -->
+    <TextView
+        android:id="@+id/tvInputDebug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#12131A"
+        android:padding="5dp"
+        android:text="Đang kiểm tra tay cầm kết nối..."
+        android:textColor="#00E676"
+        android:textSize="11sp"
+        android:typeface="monospace" />
+
+    <!-- Trung tâm: Vùng Touchpad Đa Điểm tích hợp Mô hình Tay cầm (Gamepad Tester Visualizer) -->
+    <FrameLayout
+        android:id="@+id/touchpadArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_weight="1"
+        android:background="#15151D"
+        android:focusable="false"
+        android:focusableInTouchMode="false">
+
+        <com.controller.btbridge.GamepadVisualizerView
+            android:id="@+id/gamepadVisualizer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="6dp"
+            android:text="Bấm tay cầm để test Xbox 360 | Vuốt 1/2/3 ngón để dùng chuột Multi-Touch"
+            android:textAlignment="center"
+            android:textColor="#787896"
+            android:textSize="11sp" />
+    </FrameLayout>
+
+    <!-- Nút bấm chuột vật lý phụ trợ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnLeftClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:backgroundTint="#242731"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="CHUỘT TRÁI"
+            android:textColor="#E0E0E0" />
+
+        <Button
+            android:id="@+id/btnMiddleClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="0.7"
+            android:backgroundTint="#1E222B"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="GIỮA"
+            android:textColor="#B0B0C0" />
+
+        <Button
+            android:id="@+id/btnRightClick"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#242731"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:text="CHUỘT PHẢI"
+            android:textColor="#E0E0E0" />
+    </LinearLayout>
+
+</LinearLayout>

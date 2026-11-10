@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_service_desc">Cho phép điện thoại Android này nhận tín hiệu Chuột đa điểm, Cuộn trang và Tay cầm từ một điện thoại Android khác qua Bluetooth hoặc Wi-Fi.</string>
+</resources>
